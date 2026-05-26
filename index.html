@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editor de Carátula Institucional</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="editor-panel" aria-label="Editor de carátula">
+    <div class="brand-block">
+      <span class="brand-mark">CI</span>
+      <div>
+        <h1>Carátula institucional</h1>
+        <p>Formato A4 editable</p>
+      </div>
+    </div>
+
+    <form id="coverForm" class="control-stack">
+      <label>
+        Institución
+        <input id="institutionInput" type="text" value="Municipalidad Distrital de San Juan de la Virgen">
+      </label>
+
+      <label>
+        Alcalde
+        <input id="mayorInput" type="text" value="Ing. Carlos Alberto Ramírez Torres">
+      </label>
+
+      <label>
+        Título
+        <textarea id="titleInput" rows="3">PRESUPUESTO PARTICIPATIVO MUNICIPALIDAD DISTRITAL DE SAN JUAN DE LA VIRGEN</textarea>
+      </label>
+
+      <label>
+        Sub título
+        <textarea id="subtitleInput" rows="2">Gestión pública moderna, transparente y orientada al ciudadano</textarea>
+      </label>
+
+      <label>
+        Año
+        <input id="yearInput" type="number" value="2026" min="1900" max="2100">
+      </label>
+
+      <div class="color-grid">
+        <label>
+          Color principal
+          <input id="primaryColor" type="color" value="#0f6b5d">
+        </label>
+        <label>
+          Color secundario
+          <input id="secondaryColor" type="color" value="#c99a2e">
+        </label>
+        <label>
+          Fondo
+          <input id="paperColor" type="color" value="#fbfaf7">
+        </label>
+      </div>
+    </form>
+
+    <div class="button-grid">
+      <button id="pdfBtn" class="primary-action" type="button">Exportar PDF</button>
+      <button id="pngBtn" type="button">Exportar PNG</button>
+      <button id="wordBtn" type="button">Exportar Word</button>
+      <button id="resetBtn" type="button">Restablecer</button>
+    </div>
+  </aside>
+
+  <main class="workspace">
+    <section class="preview-shell" aria-label="Vista previa A4">
+      <article id="cover" class="cover-page">
+        <div class="cover-ornament top"></div>
+        <div class="cover-ornament bottom"></div>
+
+        <header class="cover-header">
+          <div class="seal" aria-hidden="true">
+            <span></span>
+          </div>
+          <p id="institutionText" class="institution">Municipalidad Distrital de San Juan de la Virgen</p>
+        </header>
+
+        <div class="cover-body">
+          <p class="document-label">Documento Institucional</p>
+          <h2 id="titleText">PRESUPUESTO PARTICIPATIVO MUNICIPALIDAD DISTRITAL DE SAN JUAN DE LA VIRGEN</h2>
+          <p id="subtitleText" class="subtitle">Gestión pública moderna, transparente y orientada al ciudadano</p>
+        </div>
+
+        <footer class="cover-footer">
+          <div>
+            <span>Alcalde</span>
+            <strong id="mayorText">Lic.  Fernando Elías Cedillo Roque</strong>
+          </div>
+          <p id="yearText">2027</p>
+        </footer>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
